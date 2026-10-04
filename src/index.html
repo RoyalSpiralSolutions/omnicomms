@@ -1,0 +1,28 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>OmniComms</title>
+    <link rel="stylesheet" href="tabbar.css" />
+  </head>
+  <body>
+    <!-- data-tauri-drag-region makes empty strip space drag the window. The
+         bare form only drags on direct hits, so tabs and buttons still work. -->
+    <div id="tabbar" data-tauri-drag-region>
+      <div id="tabs-row" data-tauri-drag-region>
+        <img id="brand" src="brand-icon.png" alt="OmniComms" draggable="false" />
+        <div id="tabs" data-tauri-drag-region></div>
+        <button id="reload-btn" title="Reload current tab">⟳</button>
+        <button id="edit-btn" title="Edit tabs">✎</button>
+        <button id="add-btn" title="Add tab">+</button>
+      </div>
+      <div id="add-row" class="hidden">
+        <input id="add-name" type="text" placeholder="Name (e.g. Signal)" />
+        <input id="add-url" type="text" placeholder="URL (e.g. web.signal.org)" />
+        <button id="add-confirm">Add</button>
+        <button id="add-cancel">Cancel</button>
+      </div>
+    </div>
+    <script src="tabbar.js"></script>
+  </body>
+</html>

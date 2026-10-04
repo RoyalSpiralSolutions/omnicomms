@@ -1,0 +1,11 @@
+# Automatically generated - DO NOT EDIT!
+
+[[permission]]
+identifier = "allow-refresh-tab-icon"
+description = "Enables the refresh_tab_icon command without any pre-configured scope."
+commands.allow = ["refresh_tab_icon"]
+
+[[permission]]
+identifier = "deny-refresh-tab-icon"
+description = "Denies the refresh_tab_icon command without any pre-configured scope."
+commands.deny = ["refresh_tab_icon"]

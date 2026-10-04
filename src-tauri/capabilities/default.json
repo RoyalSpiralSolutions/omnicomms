@@ -1,0 +1,22 @@
+{
+  "identifier": "tabbar-ipc",
+  "description": "Lets only the tab-strip UI webview manage tabs. Tab content webviews (WhatsApp, Discord, etc.) get no IPC access at all.",
+  "windows": [],
+  "webviews": [
+    "tabbar"
+  ],
+  "permissions": [
+    "core:default",
+    "core:window:allow-start-dragging",
+    "allow-get-state",
+    "allow-add-tab",
+    "allow-remove-tab",
+    "allow-switch-tab",
+    "allow-rename-tab",
+    "allow-reorder-tabs",
+    "allow-tab-icon",
+    "allow-refresh-tab-icon",
+    "allow-set-tab-icon",
+    "allow-reload-active-tab"
+  ]
+}

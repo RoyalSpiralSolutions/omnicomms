@@ -1,0 +1,13 @@
+{
+  "name": "omnicomms",
+  "version": "0.1.0",
+  "description": "One window, many chat apps — WhatsApp Web, Discord, Telegram and more as tabs",
+  "private": true,
+  "scripts": {
+    "dev": "tauri dev",
+    "build": "tauri build"
+  },
+  "devDependencies": {
+    "@tauri-apps/cli": "^2"
+  }
+}

@@ -1,0 +1,11 @@
+# Automatically generated - DO NOT EDIT!
+
+[[permission]]
+identifier = "allow-tab-icon"
+description = "Enables the tab_icon command without any pre-configured scope."
+commands.allow = ["tab_icon"]
+
+[[permission]]
+identifier = "deny-tab-icon"
+description = "Denies the tab_icon command without any pre-configured scope."
+commands.deny = ["tab_icon"]

@@ -1,0 +1,264 @@
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow: hidden;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background: #1e1f22;
+}
+
+#tabbar {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  /* Left inset clears the traffic lights, which float over this strip. */
+  padding: 0 8px 0 78px;
+}
+
+/* Window dragging is driven by the data-tauri-drag-region attributes in
+   index.html, not CSS: -webkit-app-region is a Chromium property and has no
+   effect in the WKWebView this runs in on macOS. */
+#tabs-row,
+#add-row {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  gap: 6px;
+}
+
+#add-row.hidden {
+  display: none;
+}
+
+#tabs-row.hidden {
+  display: none;
+}
+
+#tabs {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  overflow-x: auto;
+  flex: 1;
+  min-width: 0;
+  height: 100%;
+}
+
+.tab {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 0 10px;
+  height: 26px;
+  margin-top: auto;
+  margin-bottom: auto;
+  border-radius: 7px;
+  color: #c9cdd3;
+  font-size: 13px;
+  cursor: pointer;
+  white-space: nowrap;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+.tab-icon {
+  width: 16px;
+  height: 16px;
+  flex: 0 0 auto;
+  border-radius: 3px;
+  object-fit: contain;
+  pointer-events: none;
+}
+
+.tab-icon-fallback {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #4a4d52;
+  color: #fff;
+  font-size: 10px;
+  font-weight: 600;
+  line-height: 1;
+}
+
+.tab-label {
+  pointer-events: none;
+}
+
+.tab-icon-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2px;
+  border: none;
+  border-radius: 5px;
+  background: transparent;
+  cursor: pointer;
+  flex: 0 0 auto;
+}
+
+.tab-icon-btn:hover {
+  background: #4f7cff;
+}
+
+.tab-icon-btn::after {
+  content: '✎';
+  font-size: 8px;
+  color: #c9cdd3;
+  margin-left: 2px;
+}
+
+.tab-icon-btn:hover::after {
+  color: #fff;
+}
+
+.tab:hover {
+  background: #2b2d31;
+}
+
+.tab.active {
+  background: #35373c;
+  color: #fff;
+}
+
+.tab.dragging {
+  opacity: 0.5;
+  background: #40434a;
+}
+
+.tab.editing {
+  background: #2b2d31;
+  cursor: default;
+  padding-right: 6px;
+}
+
+.tab-name-input {
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid #4a4d52;
+  color: #fff;
+  font-size: 13px;
+  font-family: inherit;
+  padding: 0 1px 1px;
+  min-width: 40px;
+  outline: none;
+}
+
+.tab-name-input:focus {
+  border-bottom-color: #4f7cff;
+}
+
+.tab.editing .close {
+  opacity: 0.7;
+  font-size: 12px;
+  padding: 0 3px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.tab.editing .close:hover {
+  opacity: 1;
+  background: #d8434b;
+  color: #fff;
+}
+
+/* Sits immediately right of the traffic lights — the leftmost spot the strip
+   actually owns, since the window controls overlay the true corner. */
+#brand {
+  width: 20px;
+  height: 20px;
+  flex: 0 0 auto;
+  margin-right: 4px;
+  user-select: none;
+  -webkit-user-select: none;
+  pointer-events: none;
+}
+
+#add-btn,
+#edit-btn,
+#reload-btn {
+  width: 26px;
+  height: 26px;
+  border-radius: 6px;
+  border: none;
+  background: #2b2d31;
+  color: #c9cdd3;
+  font-size: 16px;
+  line-height: 1;
+  cursor: pointer;
+  flex: 0 0 auto;
+}
+
+#edit-btn {
+  font-size: 13px;
+}
+
+#reload-btn {
+  font-size: 15px;
+}
+
+#reload-btn.spinning {
+  animation: spin 0.6s linear;
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+#add-btn:hover,
+#edit-btn:hover,
+#reload-btn:hover {
+  background: #3a3c41;
+}
+
+#edit-btn.active {
+  background: #4f7cff;
+  color: #fff;
+}
+
+#add-row input {
+  background: #1e1f22;
+  border: 1px solid #3a3c41;
+  border-radius: 6px;
+  color: #fff;
+  padding: 0 8px;
+  height: 26px;
+  font-size: 13px;
+}
+
+#add-name {
+  width: 140px;
+  flex: 0 0 auto;
+}
+
+#add-url {
+  flex: 1;
+  min-width: 0;
+}
+
+#add-row button {
+  border: none;
+  border-radius: 6px;
+  padding: 0 10px;
+  height: 26px;
+  font-size: 13px;
+  cursor: pointer;
+  flex: 0 0 auto;
+}
+
+#add-confirm {
+  background: #4f7cff;
+  color: #fff;
+}
+
+#add-cancel {
+  background: #3a3c41;
+  color: #c9cdd3;
+}

@@ -1,0 +1,11 @@
+# Automatically generated - DO NOT EDIT!
+
+[[permission]]
+identifier = "allow-add-tab"
+description = "Enables the add_tab command without any pre-configured scope."
+commands.allow = ["add_tab"]
+
+[[permission]]
+identifier = "deny-add-tab"
+description = "Denies the add_tab command without any pre-configured scope."
+commands.deny = ["add_tab"]

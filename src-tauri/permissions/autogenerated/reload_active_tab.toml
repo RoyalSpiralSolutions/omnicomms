@@ -1,0 +1,11 @@
+# Automatically generated - DO NOT EDIT!
+
+[[permission]]
+identifier = "allow-reload-active-tab"
+description = "Enables the reload_active_tab command without any pre-configured scope."
+commands.allow = ["reload_active_tab"]
+
+[[permission]]
+identifier = "deny-reload-active-tab"
+description = "Denies the reload_active_tab command without any pre-configured scope."
+commands.deny = ["reload_active_tab"]

@@ -1,0 +1,11 @@
+node_modules/
+dist/
+*.log
+src-tauri/target/
+src-tauri/gen/
+.claude/
+
+# Icon sources. app-icon.png is the cleaned master the icon set is generated
+# from (`npx tauri icon app-icon.png`); omnicomms.jpg is the original export.
+# Keep them if you want to regenerate icons, drop them to slim the repo.
+
